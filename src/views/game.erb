@@ -5,11 +5,16 @@
         <meta name="description" content="A story game."/>
         <meta name="author" content="Michael Louis Thaler"/>
         <title>Story Game!</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script type="text/javascript" src="/js/story.js"></script>
     </head>
     <body>
-        <p>Game ID: <%= @story.url_reference %></p>
+        <div id="story">
+            <% @story.accepted_sentences.each do |sentence| %>
+                <span class="sentence sentence-<%= sentence.id %>"><%= @sentence.text %></span>
+            <% end %>
+        </div>
         <form id="name-entry">
             <label>Enter a name: <input type="text" id="player-name" name="player-name" maxlength="128"/></label>
             <input type="submit" value="Submit"/>

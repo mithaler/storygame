@@ -15,6 +15,10 @@ get '/' do
     redirect to('/story/' + (0...8).map{ ('a'..'z').to_a[rand(26)] }.join + '/')
 end
 
+get '/css/:style.css' do |style|
+    scss style.to_sym, :style => :compressed
+end
+
 before '/story/:story_id/*' do
     @story = Story.where(:url_reference => params[:story_id]).first
 end
@@ -36,7 +40,6 @@ end
 
 =begin
 Next steps:
-1. Player name entry # DONE
 2. Entering sentences
 3. Voting
 4. Adding sentences to the story
