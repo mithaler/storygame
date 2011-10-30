@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+source 'http://gemcutter.org'
+gem 'sinatra'
+gem 'sequel'
+gem 'sqlite3'
+gem 'sass'
+gem 'erubis'
