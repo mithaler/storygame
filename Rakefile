@@ -24,7 +24,7 @@ namespace :db do
 
     desc "Empty out the database"
     task :down do
-        if ENV['RACK_ENV'] == :production
+        if ENV['RACK_ENV'] == 'production'
             StorySchema.down
         else
             Rake::Task['clean'].invoke
