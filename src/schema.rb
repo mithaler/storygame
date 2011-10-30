@@ -9,13 +9,14 @@ module StorySchema
     def self.up
         DB.create_table :stories do
             varchar :id, :size => 128, :primary_key => true
-            text :chatlog
+            text :chatlog, :default => ''
         end
 
         DB.create_table :players do
             primary_key :id
             varchar :name, :size => 128
             bigint :score
+            boolean :creator, :default => false
             foreign_key :story_id, :stories
         end
 
