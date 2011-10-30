@@ -6,8 +6,13 @@
         <meta name="author" content="Michael Louis Thaler"/>
         <title>Story Game!</title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/story.js"></script>
     </head>
     <body>
-        <p>Game ID: <%= @story.id %></p>
+        <p>Game ID: <%= @story.url_reference %></p>
+        <form id="name-entry">
+            <label>Enter a name: <input type="text" id="player-name" name="player-name" maxlength="128"/></label>
+            <input type="submit" value="Submit"/>
+        </form>
     </body>
 </html>
